@@ -1,1 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Testing Guide - My Medi Buddy</title>
+    <meta name="description" content="Testing guide for My Medi Buddy beta testers." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">MMB</div>
+          <div>
+            <h1>My Medi Buddy</h1>
+            <p class="subtitle">Android Tester Portal</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="./index.html">Home</a>
+          <a href="./download.html">Download</a>
+          <a href="./testing-guide.html" aria-current="page">Testing Guide</a>
+          <a href="./report-a-bug.html">Report a Bug</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h2>Testing Guide 🧪</h2>
+        <p>Here's what we're focusing on in this beta. Your feedback helps us build a better app!</p>
+      </div>
+
+      <section class="card">
+        <h2>Core Features to Test</h2>
+        <ul class="checklist">
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <strong>Medication Reminders</strong>
+              <p>Set reminders and receive notifications at the right time.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <strong>Medication List</strong>
+              <p>Add, edit, and manage your medications with dosage info.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <strong>History Log</strong>
+              <p>Track when you've taken each medication.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Test Scenarios</h2>
+        <ol class="steps">
+          <li>
+            <strong>Add a new medication</strong>
+            <p>Try adding a medication with name, dosage, and frequency.</p>
+          </li>
+          <li>
+            <strong>Set a reminder</strong>
+            <p>Create a daily reminder and check if you get notified.</p>
+          </li>
+          <li>
+            <strong>Log a dose</strong>
+            <p>Mark a medication as taken and check the history.</p>
+          </li>
+          <li>
+            <strong>Edit/delete medication</strong>
+            <p>Modify an existing medication or remove it.</p>
+          </li>
+          <li>
+            <strong>Navigate around</strong>
+            <p>Try moving between screens and see if everything flows well.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>What to Look For</h2>
+        <ul>
+          <li><strong>Crashes</strong> — Does the app freeze or close unexpectedly?</li>
+          <li><strong>UI issues</strong> — Are buttons easy to tap? Is text readable?</li>
+          <li><strong>Notifications</strong> — Do reminders appear on time?</li>
+          <li><strong>Data accuracy</strong> — Are your medications and history saved correctly?</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>How to Report Issues</h2>
+        <p>Found something? Use the <strong>in-app feedback form</strong> to let us know. Try to include:</p>
+        <ul>
+          <li>What you were doing when the issue occurred</li>
+          <li>What happened vs. what you expected</li>
+          <li>A screenshot if possible</li>
+        </ul>
+        <p class="muted">Go to <strong>Menu → Send Feedback</strong> inside the app.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ for our amazing tester community</p>
+      <p class="muted">© <span id="year"></span> My Medi Buddy</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

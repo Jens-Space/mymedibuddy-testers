@@ -1,1 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Report a Bug - My Medi Buddy</title>
+    <meta name="description" content="How to report bugs for My Medi Buddy app." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">MMB</div>
+          <div>
+            <h1>My Medi Buddy</h1>
+            <p class="subtitle">Android Tester Portal</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="./index.html">Home</a>
+          <a href="./download.html">Download</a>
+          <a href="./testing-guide.html">Testing Guide</a>
+          <a href="./report-a-bug.html" aria-current="page">Report a Bug</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h2>Send Feedback 💬</h2>
+        <p>Found something? We'd love to hear from you. Here's how to reach us.</p>
+      </div>
+
+      <section class="card">
+        <h2>Use the In-App Form</h2>
+        <p>The best way to report bugs is directly through the app — it automatically includes helpful technical details.</p>
+        <ol class="steps">
+          <li>Open the My Medi Buddy app</li>
+          <li>Tap the <strong>Menu</strong> (three lines or profile icon)</li>
+          <li>Select <strong>Send Feedback</strong></li>
+          <li>Fill out the form and tap <strong>Submit</strong></li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>What to Include</h2>
+        <ul>
+          <li><strong>What happened?</strong> Describe the issue in as much detail as you can.</li>
+          <li><strong>Steps to reproduce</strong> — What were you doing right before it happened?</li>
+          <li><strong>What you expected</strong> — What should have happened instead?</li>
+          <li><strong>Screenshot</strong> — Really helpful if you can add one!</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Why Use the In-App Form?</h2>
+        <p>When you submit through the app, we automatically get:</p>
+        <ul>
+          <li>Your device model and Android version</li>
+          <li>App version number</li>
+          <li>Recent app activity</li>
+        </ul>
+        <p>This helps us diagnose and fix issues much faster! 🚀</p>
+      </section>
+
+      <section class="card">
+        <h2>Priority Levels</h2>
+        <p>Here's how we prioritize issues:</p>
+        <ul class="priority-list">
+          <li><span class="priority-dot critical"></span><div><strong>Critical</strong> — App crashes, data loss, safety issues</div></li>
+          <li><span class="priority-dot high"></span><div><strong>High</strong> — Major features broken, frequent crashes</div></li>
+          <li><span class="priority-dot medium"></span><div><strong>Medium</strong> — Minor bugs, UI issues</div></li>
+          <li><span class="priority-dot low"></span><div><strong>Low</strong> — Suggestions, minor improvements</div></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ for our amazing tester community</p>
+      <p class="muted">© <span id="year"></span> My Medi Buddy</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

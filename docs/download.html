@@ -1,1 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Download - My Medi Buddy</title>
+    <meta name="description" content="Download the My Medi Buddy Android APK." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">MMB</div>
+          <div>
+            <h1>My Medi Buddy</h1>
+            <p class="subtitle">Android Tester Portal</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="./index.html">Home</a>
+          <a href="./download.html" aria-current="page">Download</a>
+          <a href="./testing-guide.html">Testing Guide</a>
+          <a href="./report-a-bug.html">Report a Bug</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h2>Get the App 📲</h2>
+        <p>Ready to start testing? Here's how to install My Medi Buddy on your device.</p>
+      </div>
+
+      <section class="card">
+        <h2>Latest Version</h2>
+        
+        <div class="download-box">
+          <div class="version-info">
+            <span class="version-badge">Latest Beta</span>
+            <span class="version-number">v1.0.0-beta.3</span>
+          </div>
+          <p class="updated-date">Last updated: April 11, 2026</p>
+          
+          <a href="#" class="download-btn">
+            <span class="download-icon">⬇</span>
+            <span>Download APK</span>
+          </a>
+          
+          <p class="file-info">📦 ~15 MB • 📱 Android 8.0+</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Installation Steps</h2>
+        <ol class="steps">
+          <li>
+            <strong>Download the APK</strong>
+            <p>Tap the download button above to save the file.</p>
+          </li>
+          <li>
+            <strong>Allow installation from unknown sources</strong>
+            <p>Go to Settings → Security → Enable "Unknown sources" OR tap "Settings" → "Allow" when prompted.</p>
+          </li>
+          <li>
+            <strong>Install the app</strong>
+            <p>Open the downloaded file and tap "Install".</p>
+          </li>
+          <li>
+            <strong>Start testing!</strong>
+            <p>Find My Medi Buddy in your app drawer and open it up.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>Having trouble?</h2>
+        <ul>
+          <li><strong>App won't install?</strong> Check that unknown sources is enabled and you have enough storage.</li>
+          <li><strong>Getting "App not installed"?</strong> Try uninstalling any previous version first.</li>
+          <li><strong>Need a hand?</strong> Use the in-app feedback form to ask questions.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ for our amazing tester community</p>
+      <p class="muted">© <span id="year"></span> My Medi Buddy</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

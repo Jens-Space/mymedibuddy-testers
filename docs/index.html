@@ -3,70 +3,76 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>My Medi Buddy ��� Tester Portal</title>
+    <title>My Medi Buddy — Tester Portal</title>
     <meta name="description" content="Tester portal for the My Medi Buddy Android beta." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <header class="container">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">MMB</div>
-        <div>
-          <h1>My Medi Buddy</h1>
-          <p class="subtitle">Android Tester Portal</p>
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">MMB</div>
+          <div>
+            <h1>My Medi Buddy</h1>
+            <p class="subtitle">Android Tester Portal</p>
+          </div>
         </div>
-      </div>
 
-      <nav class="nav">
-        <a href="./index.html" aria-current="page">Home</a>
-        <a href="./download.html">Download</a>
-        <a href="./testing-guide.html">Testing Guide</a>
-        <a href="./report-a-bug.html">Report a Bug</a>
-        <a href="./known-issues.html">Known Issues</a>
-        <a href="./privacy.html">Privacy</a>
-      </nav>
+        <nav class="nav">
+          <a href="./index.html" aria-current="page">Home</a>
+          <a href="./download.html">Download</a>
+          <a href="./testing-guide.html">Testing Guide</a>
+          <a href="./report-a-bug.html">Report a Bug</a>
+        </nav>
+      </div>
     </header>
 
-    <main class="container">
+    <main>
+      <div class="hero">
+        <h2>Welcome to My Medi Buddy! 👋</h2>
+        <p>Thanks for joining our tester community. We're building something great together.</p>
+      </div>
+
       <section class="card">
-        <h2>Welcome, testers</h2>
-        <p>
-          This site is the home base for testing the <strong>My Medi Buddy</strong> Android app:
-          where to get the latest build, what to test, and how to report issues.
-        </p>
+        <h2>Quick Start</h2>
+        <p>Here's everything you need to get started as a tester.</p>
 
         <div class="grid">
           <a class="cta" href="./download.html">
-            <h3>Get the latest APK</h3>
-            <p>Install/update instructions and download link.</p>
+            <h3>📥 Get the App</h3>
+            <p>Download the latest APK and get up and running.</p>
           </a>
 
           <a class="cta" href="./testing-guide.html">
-            <h3>What to test</h3>
-            <p>Checklist and scenarios to focus on.</p>
+            <h3>🧪 What to Test</h3>
+            <p>Checklist and scenarios to help you test effectively.</p>
           </a>
 
           <a class="cta" href="./report-a-bug.html">
-            <h3>Send feedback</h3>
-            <p>Use the in-app form + what details to include.</p>
+            <h3>💬 Send Feedback</h3>
+            <p>Found something? Let us know through the app.</p>
           </a>
         </div>
       </section>
 
       <section class="card">
-        <h2>Quick rules</h2>
+        <h2>Tester Guidelines</h2>
         <ul>
-          <li><strong>Report bugs via the in-app feedback form</strong> (preferred).</li>
-          <li>Please don’t share APK links publicly unless you’re told it’s OK.</li>
-          <li>If something feels urgent/safety-related, stop and report it immediately.</li>
+          <li><strong>Report bugs via the in-app feedback form</strong> — it's the easiest way for us to help.</li>
+          <li>Please keep APK links private unless given permission to share.</li>
+          <li>If something feels urgent or relates to safety, reach out right away.</li>
         </ul>
-        <p class="muted">Last updated: 2026-04-11</p>
+        <p class="muted">Last updated: April 2026</p>
       </section>
     </main>
 
-    <footer class="container footer">
-      <p class="muted">© <span id="year"></span> My Medi Buddy • Tester Portal</p>
+    <footer>
+      <p>Made with ❤️ for our amazing tester community</p>
+      <p class="muted">© <span id="year"></span> My Medi Buddy</p>
     </footer>
 
     <script>

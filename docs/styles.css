@@ -90,7 +90,7 @@ header::before {
 }
 
 .logo {
-  width: 48px;
+  width: 120px;
   height: 48px;
   border-radius: var(--radius-sm);
   object-fit: contain;
@@ -659,7 +659,7 @@ ol li {
   }
   
   .logo {
-    width: 40px;
+    width: 100px;
     height: 40px;
   }
   

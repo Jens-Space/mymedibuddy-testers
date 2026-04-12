@@ -86,11 +86,11 @@ header::before {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.875rem;
+  justify-content: center;
 }
 
 .logo {
-  height: 60px;
+  height: 80px;
   width: auto;
   border-radius: var(--radius-sm);
   object-fit: contain;
@@ -659,7 +659,7 @@ ol li {
   }
   
   .logo {
-    height: 50px;
+    height: 70px;
     width: auto;
   }
   

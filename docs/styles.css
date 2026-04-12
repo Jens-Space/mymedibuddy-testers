@@ -18,8 +18,8 @@
   --light-purple: #F3E5F5;
   --text: #000000;
   --text-light: #BA68C8;
-  --bg: #F7FAFC;
-  --bg-alt: #F3E5F5;
+  --bg: #FFFFFF;
+  --bg-alt: #FFFFFF;
   --card-bg: #FFFFFF;
   --border: #CE93D8;
   --shadow: 0 4px 16px rgba(156, 39, 176, 0.15);
@@ -37,10 +37,6 @@
 body {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(255, 123, 123, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;

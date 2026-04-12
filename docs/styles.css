@@ -92,15 +92,8 @@ header::before {
 .logo {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, var(--coral) 0%, var(--yellow) 100%);
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: white;
-  font-size: 1rem;
-  box-shadow: 0 4px 12px rgba(255, 123, 123, 0.3);
+  object-fit: contain;
 }
 
 .brand h1 {
@@ -668,7 +661,6 @@ ol li {
   .logo {
     width: 40px;
     height: 40px;
-    font-size: 0.85rem;
   }
   
   .brand h1 {

@@ -255,8 +255,8 @@ main {
 }
 
 .warm-card {
-  background: #FFFCF8;
-  border: 2px solid #FFE8D6;
+  background: white;
+  border: 2px solid var(--primary-light);
 }
 
 .warm-points {
@@ -396,8 +396,8 @@ main {
 }
 
 footer {
-  background: var(--primary);
-  border-top: none;
+  background: var(--bg);
+  border-top: 2px solid var(--primary);
   padding: 2rem;
   text-align: center;
 }

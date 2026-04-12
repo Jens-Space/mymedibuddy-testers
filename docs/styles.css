@@ -90,8 +90,8 @@ header::before {
 }
 
 .logo {
-  width: 120px;
-  height: 48px;
+  height: 60px;
+  width: auto;
   border-radius: var(--radius-sm);
   object-fit: contain;
 }
@@ -659,8 +659,8 @@ ol li {
   }
   
   .logo {
-    width: 100px;
-    height: 40px;
+    height: 50px;
+    width: auto;
   }
   
   .brand h1 {

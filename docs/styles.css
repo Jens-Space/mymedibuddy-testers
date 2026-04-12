@@ -22,7 +22,7 @@
   --bg-alt: #FFFFFF;
   --card-bg: #FFFFFF;
   --border: #CE93D8;
-  --shadow: none;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-hover: none;
   --radius: 16px;
   --radius-sm: 10px;
@@ -126,6 +126,8 @@ main {
   padding: 1.25rem;
   border-radius: var(--radius);
   margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 .card h2 {
@@ -135,13 +137,24 @@ main {
 .cta {
   padding: 1.25rem;
   min-height: var(--tap-size);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--light-purple);
 }
 
 .download-btn {
-  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: white;
   padding: 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 800;
   font-size: 1.1rem;
+  width: 100%;
 }
 
 .friendly-step {

@@ -5,26 +5,25 @@
 }
 
 :root {
-  --primary: #3D9A8B;
-  --primary-light: #5BC0AE;
-  --primary-dark: #2D7A6D;
-  --coral: #FF7B7B;
-  --coral-light: #FFB5B5;
-  --yellow: #FFD93D;
-  --yellow-light: #FFF0A0;
-  --purple: #A78BFA;
-  --purple-light: #DDD6FE;
-  --blue: #60A5FA;
-  --blue-light: #BFDBFE;
-  --secondary: #E6F7F4;
-  --text: #3A4A4D;
-  --text-light: #6B7D80;
-  --bg: #FFFCF8;
-  --bg-alt: #FFF5E6;
+  --primary: #9C27B0;
+  --primary-light: #CE93D8;
+  --primary-dark: #4A148C;
+  --accent: #7B1FA2;
+  --teal: #26A69A;
+  --green: #4CAF50;
+  --yellow: #FFC107;
+  --lavender: #9575CD;
+  --white: #FFFFFF;
+  --cream: #F7FAFC;
+  --light-purple: #F3E5F5;
+  --text: #000000;
+  --text-light: #BA68C8;
+  --bg: #F7FAFC;
+  --bg-alt: #F3E5F5;
   --card-bg: #FFFFFF;
-  --border: #FFE8D6;
-  --shadow: 0 4px 16px rgba(255, 123, 123, 0.1);
-  --shadow-hover: 0 8px 24px rgba(255, 123, 123, 0.2);
+  --border: #CE93D8;
+  --shadow: 0 4px 16px rgba(156, 39, 176, 0.15);
+  --shadow-hover: 0 8px 24px rgba(156, 39, 176, 0.25);
   --radius: 16px;
   --radius-sm: 10px;
   --radius-lg: 24px;
@@ -49,9 +48,9 @@ body {
 }
 
 header {
-  background: white;
+  background: var(--primary);
   border-bottom: none;
-  box-shadow: 0 4px 20px rgba(255, 123, 123, 0.08);
+  box-shadow: 0 4px 20px rgba(156, 39, 176, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -64,7 +63,7 @@ header::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--coral), var(--yellow), var(--primary-light), var(--blue), var(--purple));
+  background: linear-gradient(90deg, var(--primary), var(--yellow), var(--primary-light), var(--lavender), var(--purple));
   background-size: 200% 100%;
   animation: rainbow 8s ease infinite;
 }
@@ -113,7 +112,7 @@ header::before {
   display: flex;
   gap: 0.25rem;
   padding: 0.5rem;
-  background: white;
+  background: var(--primary);
   position: sticky;
   top: 60px;
   border-bottom: 2px solid var(--border);
@@ -135,13 +134,13 @@ header::before {
 }
 
 .nav a:hover {
-  color: var(--coral);
+  color: var(--primary);
   background: rgba(255, 123, 123, 0.1);
 }
 
 .nav a[aria-current="page"] {
   color: white;
-  background: linear-gradient(135deg, var(--coral) 0%, var(--coral-light) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   box-shadow: 0 4px 12px rgba(255, 123, 123, 0.3);
 }
 
@@ -189,11 +188,11 @@ main {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--coral), var(--yellow), var(--primary-light), var(--purple));
+  background: linear-gradient(90deg, var(--primary), var(--yellow), var(--primary-light), var(--purple));
 }
 
 .card:nth-child(odd)::before {
-  background: linear-gradient(90deg, var(--purple), var(--blue), var(--primary-light), var(--coral));
+  background: linear-gradient(90deg, var(--purple), var(--lavender), var(--primary-light), var(--primary));
 }
 
 .card:hover {
@@ -225,7 +224,7 @@ main {
 .friendly-num {
   width: 2rem;
   height: 2rem;
-  background: linear-gradient(135deg, var(--coral) 0%, var(--yellow) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--yellow) 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -365,7 +364,7 @@ main {
 
 .cta:nth-child(1):hover {
   background: white;
-  border-color: var(--coral);
+  border-color: var(--primary);
 }
 
 .cta:nth-child(2):hover {
@@ -375,7 +374,7 @@ main {
 
 .cta:nth-child(3):hover {
   background: white;
-  border-color: var(--blue);
+  border-color: var(--lavender);
 }
 
 .cta h3 {
@@ -384,9 +383,9 @@ main {
   font-weight: 800;
 }
 
-.cta:nth-child(1) h3 { color: var(--coral); }
+.cta:nth-child(1) h3 { color: var(--primary); }
 .cta:nth-child(2) h3 { color: var(--purple); }
-.cta:nth-child(3) h3 { color: var(--blue); }
+.cta:nth-child(3) h3 { color: var(--lavender); }
 
 .cta p {
   font-size: 0.9rem;
@@ -401,9 +400,9 @@ main {
 }
 
 footer {
-  background: linear-gradient(135deg, var(--coral-light) 0%, var(--yellow-light) 50%, var(--purple-light) 100%);
+  background: var(--primary);
   border-top: none;
-  padding: 2.5rem;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -423,7 +422,7 @@ h1, h2, h3 {
 }
 
 .download-box {
-  background: linear-gradient(135deg, var(--coral) 0%, var(--purple) 50%, var(--blue) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 50%, var(--lavender) 100%);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   text-align: center;
@@ -487,7 +486,7 @@ h1, h2, h3 {
   justify-content: center;
   gap: 0.5rem;
   background: white;
-  color: var(--coral);
+  color: var(--primary);
   padding: 1rem;
   border-radius: 30px;
   text-decoration: none;
@@ -531,7 +530,7 @@ h1, h2, h3 {
   top: -2px;
   width: 2rem;
   height: 2rem;
-  background: linear-gradient(135deg, var(--coral) 0%, var(--yellow) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--yellow) 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -574,7 +573,7 @@ h1, h2, h3 {
 .check {
   width: 1.75rem;
   height: 1.75rem;
-  background: linear-gradient(135deg, var(--coral-light) 0%, var(--yellow-light) 100%);
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--yellow-light) 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -635,10 +634,10 @@ ol li {
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.priority-dot.critical { background: var(--coral); }
+.priority-dot.critical { background: var(--primary); }
 .priority-dot.high { background: var(--yellow); }
 .priority-dot.medium { background: var(--primary-light); }
-.priority-dot.low { background: var(--blue); }
+.priority-dot.low { background: var(--lavender); }
 
 body {
   font-size: 17px;

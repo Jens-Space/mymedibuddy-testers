@@ -34,6 +34,16 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+a, button, .card, .cta {
+  -webkit-tap-highlight-color: transparent;
+  transition: none !important;
+}
+
+a:hover, .card:hover, .cta:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 body {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);

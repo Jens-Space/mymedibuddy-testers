@@ -22,8 +22,8 @@
   --bg-alt: #FFFFFF;
   --card-bg: #FFFFFF;
   --border: #CE93D8;
-  --shadow: 0 4px 16px rgba(156, 39, 176, 0.15);
-  --shadow-hover: 0 8px 24px rgba(156, 39, 176, 0.25);
+  --shadow: none;
+  --shadow-hover: none;
   --radius: 16px;
   --radius-sm: 10px;
   --radius-lg: 24px;

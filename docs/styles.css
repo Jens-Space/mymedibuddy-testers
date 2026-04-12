@@ -68,7 +68,7 @@ header {
 }
 
 .nav a {
-  color: var(--text-light);
+  color: #000000;
   text-decoration: none;
   font-size: 0.75rem;
   font-weight: 600;
@@ -94,16 +94,17 @@ main {
 .hero h2 {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
+  color: #000000;
 }
 
 .hero p {
   font-size: 1rem;
-  color: var(--text-light);
+  color: #000000;
 }
 
 .card {
   background: var(--light-purple);
-  border: 1px solid var(--primary-light);
+  border: 2px solid var(--primary);
   border-radius: var(--radius);
   padding: 1.25rem;
   margin-bottom: 1rem;
@@ -112,13 +113,13 @@ main {
 
 .card h2 {
   font-size: 1.1rem;
-  color: var(--primary);
+  color: var(--primary-dark);
   margin-bottom: 0.75rem;
 }
 
 .card p {
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: #000000;
 }
 
 .grid {
@@ -131,7 +132,7 @@ main {
 .cta {
   display: block;
   padding: 1.25rem;
-  border: 2px solid var(--primary-light);
+  border: 2px solid var(--primary);
   border-radius: var(--radius);
   text-decoration: none;
   background: var(--light-purple);
@@ -139,13 +140,13 @@ main {
 
 .cta h3 {
   font-size: 1rem;
-  color: var(--primary-dark);
+  color: #000000;
   margin-bottom: 0.25rem;
 }
 
 .cta p {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: #000000;
   margin: 0;
 }
 
@@ -245,7 +246,8 @@ main {
   background: var(--light-purple);
   border-radius: 8px;
   font-size: 0.9rem;
-  color: var(--primary-dark);
+  color: #000000;
+  font-weight: 600;
 }
 
 .warm-point {

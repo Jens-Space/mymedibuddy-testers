@@ -102,8 +102,8 @@ main {
 }
 
 .card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--light-purple);
+  border: 1px solid var(--primary-light);
   border-radius: var(--radius);
   padding: 1.25rem;
   margin-bottom: 1rem;

@@ -16,27 +16,23 @@
   --white: #FFFFFF;
   --cream: #F7FAFC;
   --light-purple: #F3E5F5;
-  --text: #000000;
+  --text: #333333;
   --text-light: #666666;
   --bg: #FFFFFF;
   --card-bg: #FFFFFF;
   --border: #E0E0E0;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   --radius: 12px;
-  --tap-size: 44px;
-}
-
-* {
-  -webkit-tap-highlight-color: transparent;
+  --tap-size: 48px;
 }
 
 body {
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 header {
@@ -44,52 +40,46 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: var(--shadow);
 }
 
 .header-inner {
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .logo {
-  height: 150px;
+  height: 120px;
   width: auto;
 }
 
 .nav {
   display: flex;
-  gap: 0.25rem;
-  padding: 0.5rem;
+  gap: 0.5rem;
+  padding: 0.75rem;
   background: white;
   position: sticky;
-  top: 150px;
+  top: 120px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
+  box-shadow: var(--shadow);
 }
 
 .nav a {
   color: var(--text-light);
   text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 600;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  flex: 1;
   text-align: center;
-  max-width: 80px;
 }
 
 .nav a[aria-current="page"] {
-  color: var(--primary);
-  background: var(--light-purple);
+  color: white;
+  background: var(--primary);
 }
 
 main {
@@ -98,11 +88,11 @@ main {
 
 .hero {
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0.5rem;
 }
 
 .hero h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
@@ -117,12 +107,13 @@ main {
   border-radius: var(--radius);
   padding: 1.25rem;
   margin-bottom: 1rem;
+  box-shadow: var(--shadow);
 }
 
 .card h2 {
-  font-size: 1.15rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
   color: var(--primary);
+  margin-bottom: 0.75rem;
 }
 
 .card p {
@@ -140,7 +131,7 @@ main {
 .cta {
   display: block;
   padding: 1.25rem;
-  border: 1px solid var(--border);
+  border: 2px solid var(--primary-light);
   border-radius: var(--radius);
   text-decoration: none;
   background: var(--light-purple);
@@ -148,7 +139,7 @@ main {
 
 .cta h3 {
   font-size: 1rem;
-  color: var(--primary);
+  color: var(--primary-dark);
   margin-bottom: 0.25rem;
 }
 
@@ -159,28 +150,63 @@ main {
 }
 
 .download-box {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
+}
+
+.version-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.version-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.version-number {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.updated-date {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .download-btn {
   display: inline-block;
   background: white;
   color: var(--primary);
-  padding: 0.75rem 1.5rem;
-  border-radius: 20px;
+  padding: 0.875rem 2rem;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
+}
+
+.file-info {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  margin-top: 1rem;
 }
 
 .friendly-step {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  padding: 0.75rem 0;
+  padding: 0.875rem 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -189,8 +215,8 @@ main {
 }
 
 .friendly-num {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   background: var(--primary);
   color: white;
   border-radius: 50%;
@@ -198,14 +224,13 @@ main {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   flex-shrink: 0;
 }
 
 .friendly-content strong {
   display: block;
   font-size: 0.95rem;
-  margin-bottom: 0.15rem;
 }
 
 .friendly-content p {
@@ -340,41 +365,6 @@ ol li {
   font-size: 0.85rem;
   color: var(--text-light);
   margin: 0;
-}
-
-.version-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.version-badge {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.version-number {
-  color: white;
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.updated-date {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-.file-info {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.8rem;
-  margin-top: 0.75rem;
 }
 
 ul {

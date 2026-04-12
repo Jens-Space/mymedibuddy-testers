@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Medi Buddy — Tester Portal</title>
+    <meta name="description" content="Tester portal for the My Medi Buddy Android beta." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./docs/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">MMB</div>
+          <div>
+            <h1>My Medi Buddy</h1>
+            <p class="subtitle">Tester Hub — Beta</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="./index.html" aria-current="page">🏠 Home</a>
+          <a href="./docs/download.html">📥 Get</a>
+          <a href="./docs/testing-guide.html">📋 Guide</a>
+          <a href="./docs/report-a-bug.html">💬 Report</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h2>Hey! Thanks for joining 😊</h2>
+        <p>You're one of our first testers, and that means a lot. We're building this app together, and your thoughts will help make it better.</p>
+      </div>
+
+      <section class="card friendly-card">
+        <h2>How Testing Works</h2>
+        
+        <div class="friendly-steps">
+          <div class="friendly-step">
+            <span class="friendly-num">1</span>
+            <div class="friendly-content">
+              <strong>Get the app</strong>
+              <p>Download it here, then open it on your phone like any other app.</p>
+            </div>
+          </div>
+          
+          <div class="friendly-step">
+            <span class="friendly-num">2</span>
+            <div class="friendly-content">
+              <strong>Use it like normal</strong>
+              <p>Try different features, add some info, see how it feels.</p>
+            </div>
+          </div>
+          
+          <div class="friendly-step">
+            <span class="friendly-num">3</span>
+            <div class="friendly-content">
+              <strong>Tell us what you think</strong>
+              <p>There's a feedback button right in the app. Just tap it if something's not quite right (or if you really like something!).</p>
+            </div>
+          </div>
+        </div>
+        
+        <p class="friendly-note">That's it! No special skills needed. If you use a phone, you can test this app.</p>
+      </section>
+
+      <section class="card">
+        <h2>Quick Actions</h2>
+        <p>Your feedback directly shapes the app. Pick a task below.</p>
+
+        <div class="grid">
+          <a class="cta" href="./download.html">
+            <h3>📥 Get the App</h3>
+            <p>Download the latest APK and get up and running.</p>
+          </a>
+
+          <a class="cta" href="./testing-guide.html">
+            <h3>🧪 What to Test</h3>
+            <p>Priorities and scenarios to focus your testing on.</p>
+          </a>
+
+          <a class="cta" href="./report-a-bug.html">
+            <h3>💬 Send Feedback</h3>
+            <p>Found something? Let us know through the app.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="card warm-card">
+        <h2>Why We're Doing This</h2>
+        <p>We want to build an app that actually works well for real people. That's where you come in.</p>
+        
+        <div class="warm-points">
+          <div class="warm-point">
+            <span class="warm-emoji">💜</span>
+            <div>
+              <strong>Real feedback from real people</strong>
+              <p>Not automated reports — honest opinions from folks who use it every day.</p>
+            </div>
+          </div>
+          
+          <div class="warm-point">
+            <span class="warm-emoji">🌱</span>
+            <div>
+              <strong>Build something good together</strong>
+              <p>This is your chance to help shape an app you'll actually use.</p>
+            </div>
+          </div>
+          
+          <div class="warm-point">
+            <span class="warm-emoji">🎉</span>
+            <div>
+              <strong>Be the first to try it</strong>
+              <p>Get early access to new features and tell us what you think before anyone else sees them.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ for our amazing tester community</p>
+      <p class="muted">© <span id="year"></span> My Medi Buddy</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

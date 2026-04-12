@@ -90,7 +90,7 @@ header::before {
 }
 
 .logo {
-  height: 150px;
+  height: 200px;
   width: auto;
   border-radius: var(--radius-sm);
   object-fit: contain;
@@ -661,7 +661,7 @@ header {
 }
 
 .logo {
-  height: 150px;
+  height: 180px;
   width: auto;
 }
 

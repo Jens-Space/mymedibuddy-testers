@@ -206,6 +206,11 @@ main {
   margin-top: 1rem;
 }
 
+.download-box .updated-date,
+.download-box .file-info {
+  color: #ffffff;
+}
+
 .friendly-step {
   display: flex;
   align-items: flex-start;

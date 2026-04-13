@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./docs/styles.css?v=1776090634" />
+    <link rel="stylesheet" href="./docs/styles.css?v=1776090803" />
   </head>
 
   <body>
@@ -115,6 +115,15 @@
       <p>I built this with ❤️ for our amazing tester community</p>
       <p class="muted">© 2026 Jens-Space | All rights reserved.</p>
     </footer>
+
+    <button id="back-to-top" aria-label="Back to top">&#8679;</button>
+    <script>
+      const btn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 200);
+      });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
 
     
   </body>

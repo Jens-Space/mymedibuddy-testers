@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776096308" />
+    <link rel="stylesheet" href="./styles.css?v=1776099082" />
   </head>
 
   <body>
@@ -45,7 +45,7 @@
           </div>
           <p class="updated-date">Last updated: <span id="date">...</span></p>
           
-          <a id="download-link" href="#" class="download-btn">
+          <a id="download-link" href="./MyMediBuddy-Beta.apk" class="download-btn" download>
             <span>Download APK</span>
           </a>
           <p id="download-feedback" class="download-feedback" style="display:none">✅ Download started — check your notifications bar!</p>
@@ -79,7 +79,7 @@
       <section class="card">
         <h2>Having trouble?</h2>
         <ul>
-          <li><strong>Download not starting?</strong> A new tab will open then close — the download will appear in your notification bar. Give it a few seconds.</li>
+          <li><strong>Download not starting?</strong> Open this page in Chrome, tap Download APK again, then check your notification bar and Downloads app.</li>
           <li><strong>App won't install?</strong> Check that unknown sources is enabled and you have enough storage.</li>
           <li><strong>Getting "App not installed"?</strong> Try uninstalling any previous version first.</li>
           <li><strong>Need a hand?</strong> Use the in-app feedback form to ask questions.</li>
@@ -94,16 +94,12 @@
     </footer>
 
     <script>
-      // Direct GitHub Pages URL — no redirects, no CDN handoff
       const link = document.getElementById('download-link');
       const feedback = document.getElementById('download-feedback');
-      link.href = './MyMediBuddy-Beta.apk';
 
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
+      link.addEventListener('click', function() {
         feedback.style.display = 'block';
-        setTimeout(() => { feedback.style.display = 'none'; }, 10000);
-        window.location.href = this.href;
+        setTimeout(() => { feedback.style.display = 'none'; }, 6000);
       });
 
       // GitHub API for version number and date only

@@ -26,23 +26,22 @@ https://jens-space.github.io/mymedibuddy-testers/
 3. Open index.html.
 
 ## APK Download Flow (Current)
-The download button uses GitHub Releases latest direct-download URL:
+The download button uses a direct file hosted in this repository via GitHub Pages:
 
-https://github.com/Jens-Space/mymedibuddy-testers/releases/latest/download/MyMediBuddy-Beta.apk
+https://jens-space.github.io/mymedibuddy-testers/docs/MyMediBuddy-Beta.apk
 
 Benefits:
 - no Google Drive permission prompts,
-- one stable URL on the website,
-- users always get the newest uploaded release asset.
+- no GitHub Releases redirect chain,
+- stable direct download from the website.
 
 ## Release Checklist (For App Updates)
 1. Increment Android versionCode (must be higher than previous build).
 2. Update versionName.
 3. Build a signed APK.
 4. Sign with the same keystore as previous releases.
-5. Create a new GitHub Release.
-6. Upload APK with the same filename: MyMediBuddy-Beta.apk.
-7. Publish release.
+5. Replace docs/MyMediBuddy-Beta.apk with the new build (same filename).
+6. Commit and push to main.
 
 Important:
 - Same signing key is required for update-in-place installs.

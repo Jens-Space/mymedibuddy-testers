@@ -94,7 +94,7 @@
         .then(res => res.json())
         .then(data => {
           const asset = data.assets[0];
-          document.getElementById('version').textContent = data.tag_name;
+          document.getElementById('version').textContent = data.tag_name.replace(/-beta$/i, '');
           document.getElementById('date').textContent = new Date(data.published_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
           document.getElementById('size').textContent = (asset.size / 1024 / 1024).toFixed(1) + ' MB';
           document.getElementById('download-link').href = asset.browser_download_url;

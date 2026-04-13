@@ -122,6 +122,7 @@ main {
 .card p {
   font-size: 0.95rem;
   color: #444444;
+  text-align: center;
 }
 
 .grid {

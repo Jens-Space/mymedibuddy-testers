@@ -136,6 +136,10 @@ main {
   text-align: center;
 }
 
+.friendly-card > p {
+  text-align: left;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;

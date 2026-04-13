@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776084732" />
+    <link rel="stylesheet" href="./styles.css?v=1776085015" />
   </head>
 
   <body>
@@ -93,6 +93,12 @@
     </footer>
 
     <script>
+      // Google Drive direct download link for the APK
+      const driveDownloadUrl = 'https://drive.google.com/uc?export=download&id=1t6nq3X1uW1nEDAmpZtVbCdkhjfvKHUO4';
+      const link = document.getElementById('download-link');
+      link.href = driveDownloadUrl;
+
+      // GitHub API for version number, date and file size only
       fetch('https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/latest')
         .then(res => res.json())
         .then(data => {
@@ -100,9 +106,6 @@
           document.getElementById('version').textContent = data.tag_name.replace(/-beta$/i, '');
           document.getElementById('date').textContent = new Date(data.published_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
           document.getElementById('size').textContent = (asset.size / 1024 / 1024).toFixed(1) + ' MB';
-          const link = document.getElementById('download-link');
-          link.href = asset.browser_download_url;
-          link.setAttribute('download', asset.name);
         });
     </script>
 

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776095358" />
+    <link rel="stylesheet" href="./styles.css?v=1776096004" />
   </head>
 
   <body>
@@ -45,7 +45,7 @@
           </div>
           <p class="updated-date">Last updated: <span id="date">...</span></p>
           
-          <a id="download-link" href="#" class="download-btn" target="_blank" rel="noopener noreferrer">
+          <a id="download-link" href="#" class="download-btn">
             <span>Download APK</span>
           </a>
           <p id="download-feedback" class="download-feedback" style="display:none">✅ Download started — check your notifications bar!</p>
@@ -59,7 +59,7 @@
         <ol class="steps">
           <li>
             <strong>Tap the Download APK button</strong>
-            <p>A new tab will open briefly, then close. Your download will appear in your <strong>notifications bar</strong> at the top of your screen — tap it to open the file.</p>
+            <p>You'll stay on this page. The download will appear in your <strong>notifications bar</strong> at the top of your screen — tap it to open and install the file.</p>
           </li>
           <li>
             <strong>Allow installation from unknown sources</strong>
@@ -100,9 +100,12 @@
       const feedback = document.getElementById('download-feedback');
       link.href = releaseDownloadUrl;
 
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (!this.href || this.href === location.href) return;
         feedback.style.display = 'block';
-        setTimeout(() => { feedback.style.display = 'none'; }, 8000);
+        setTimeout(() => { feedback.style.display = 'none'; }, 10000);
+        window.location.href = this.href;
       });
 
       // GitHub API for version number, date, file size, and exact asset URL

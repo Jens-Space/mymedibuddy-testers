@@ -337,6 +337,7 @@ ol li {
   position: relative;
   padding-left: 2.5rem;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .steps li::before {
@@ -383,6 +384,7 @@ ol li {
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.75rem 0;
+  text-align: left;
 }
 
 .check {
@@ -426,6 +428,13 @@ ul li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
   overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.friendly-step,
+.warm-point,
+ol li {
+  text-align: left;
 }
 
 .friendly-step > div,

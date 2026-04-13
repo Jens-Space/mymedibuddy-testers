@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=16" />
+    <link rel="stylesheet" href="./styles.css?v=17" />
   </head>
 
   <body>
@@ -39,16 +39,16 @@
         <div class="download-box">
           <div class="version-info">
             <span class="version-badge">Latest Beta</span>
-            <span class="version-number">v1.0.0-beta.3</span>
+            <span class="version-number" id="version">Loading...</span>
           </div>
-          <p class="updated-date">Last updated: April 11, 2026</p>
+          <p class="updated-date">Last updated: <span id="date">...</span></p>
           
-          <a href="#" class="download-btn">
+          <a id="download-link" href="#" class="download-btn">
             <span class="download-icon">⬇</span>
             <span>Download APK</span>
           </a>
           
-          <p class="file-info">📦 ~15 MB • 📱 Android 8.0+</p>
+          <p class="file-info">📦 <span id="size">...</span> • 📱 Android 8.0+</p>
         </div>
       </section>
 
@@ -88,6 +88,18 @@
       <p>Made with ❤️ for our amazing tester community</p>
       <p class="muted">© 2026 Jens-Space | All rights reserved.</p>
     </footer>
+
+    <script>
+      fetch('https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/latest')
+        .then(res => res.json())
+        .then(data => {
+          const asset = data.assets[0];
+          document.getElementById('version').textContent = data.tag_name;
+          document.getElementById('date').textContent = new Date(data.published_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+          document.getElementById('size').textContent = (asset.size / 1024 / 1024).toFixed(1) + ' MB';
+          document.getElementById('download-link').href = asset.browser_download_url;
+        });
+    </script>
 
 
   </body>

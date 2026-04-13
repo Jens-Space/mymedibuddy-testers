@@ -548,17 +548,20 @@ footer .muted {
   }
 
   .nav {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: 0.4rem;
     padding: 0.6rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav a {
-    flex: 1 1 calc(50% - 0.5rem);
-    min-width: 8.5rem;
-    max-width: 12rem;
-    font-size: 0.95rem;
+    flex: 0 0 auto;
+    min-width: 0;
+    max-width: none;
+    white-space: nowrap;
+    font-size: 0.92rem;
     padding: 0.55rem 0.5rem;
   }
 
@@ -619,8 +622,8 @@ footer .muted {
   }
 
   .nav a {
-    min-width: 0;
-    flex: 1 1 100%;
+    font-size: 0.88rem;
+    padding: 0.5rem 0.45rem;
   }
 
   .steps li {

@@ -290,6 +290,7 @@ main {
   font-size: 0.85rem;
   color: var(--text-light);
   margin: 0;
+  text-align: left;
 }
 
 ol {

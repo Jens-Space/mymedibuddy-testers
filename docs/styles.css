@@ -235,7 +235,6 @@ main {
 .friendly-step {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   gap: 0.75rem;
   padding: 0.875rem 0;
   border-bottom: 1px solid var(--border);
@@ -262,7 +261,7 @@ main {
 .friendly-content strong {
   display: block;
   font-size: 1.05rem;
-  text-align: center;
+  text-align: left;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -271,7 +270,7 @@ main {
   font-size: 1rem;
   color: var(--text-light);
   margin: 0;
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -289,7 +288,6 @@ main {
 .warm-point {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   gap: 0.75rem;
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
@@ -306,7 +304,6 @@ main {
 .warm-point strong {
   display: block;
   font-size: 1.05rem;
-  text-align: center;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -315,7 +312,7 @@ main {
   font-size: 1rem;
   color: var(--text-light);
   margin: 0;
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -331,26 +328,24 @@ ol li {
 }
 
 .steps {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 1rem;
   counter-reset: step;
 }
 
 .steps li {
   list-style: none;
   position: relative;
-  padding-left: 0;
-  padding-top: 2rem;
+  padding-left: 2.5rem;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .steps li::before {
   counter-increment: step;
   content: counter(step);
   position: absolute;
-  left: 50%;
+  left: 0;
   top: 0;
-  transform: translateX(-50%);
   width: 1.5rem;
   height: 1.5rem;
   background: var(--primary);
@@ -367,7 +362,6 @@ ol li {
   display: block;
   font-size: 1.05rem;
   color: #000000;
-  text-align: center;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -375,7 +369,7 @@ ol li {
 .steps li p {
   font-size: 1.05rem;
   color: var(--text-light);
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -388,10 +382,9 @@ ol li {
 .checklist li {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   gap: 0.75rem;
   padding: 0.75rem 0;
-  text-align: center;
+  text-align: left;
 }
 
 .check {
@@ -412,7 +405,6 @@ ol li {
   display: block;
   font-size: 1.05rem;
   color: #000000;
-  text-align: center;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -421,15 +413,13 @@ ol li {
   font-size: 1.05rem;
   color: var(--text-light);
   margin: 0;
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
 ul {
-  margin: 0.5rem 0;
-  padding-left: 0;
-  list-style-position: inside;
+  margin: 0.5rem 0 0.5rem 1.25rem;
 }
 
 ul li {
@@ -438,19 +428,19 @@ ul li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
   overflow-wrap: anywhere;
-  text-align: center;
+  text-align: left;
 }
 
 .friendly-step,
 .warm-point,
 ol li {
-  text-align: center;
+  text-align: left;
 }
 
 .friendly-step > div,
 .warm-point > div,
 .checklist li > div {
-  flex: 0 1 30rem;
+  flex: 1;
   min-width: 0;
 }
 

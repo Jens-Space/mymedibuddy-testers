@@ -103,6 +103,12 @@ main {
   text-align: center;
 }
 
+.home-hero-title {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(1.2rem, 5.5vw, 1.5rem);
+}
+
 .hero p {
   font-size: 1rem;
   color: #000000;

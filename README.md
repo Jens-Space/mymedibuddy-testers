@@ -13,9 +13,13 @@ It helps early testers:
 - index.html (root landing page)
 - docs/index.html (home page used in docs path)
 - docs/download.html (APK page)
+- docs/MyMediBuddy-Beta.apk (APK served directly by GitHub Pages)
 - docs/testing-guide.html (test guidance)
 - docs/report-a-bug.html (feedback/reporting guidance)
 - docs/styles.css (shared styles for all pages)
+- progress.md (project progress log)
+- RELEASE_MESSAGE_PACK.md (full tester message templates)
+- WHATSAPP_MESSAGE_PACK.md (short message templates)
 
 ## Live Site
 https://jens-space.github.io/mymedibuddy-testers/
@@ -35,6 +39,10 @@ Benefits:
 - no GitHub Releases redirect chain,
 - stable direct download from the website.
 
+Tester page:
+
+https://jens-space.github.io/mymedibuddy-testers/docs/download.html
+
 ## Release Checklist (For App Updates)
 1. Increment Android versionCode (must be higher than previous build).
 2. Update versionName.
@@ -51,13 +59,22 @@ Important:
 - GitHub Pages deploys on push to main via GitHub Actions.
 - HTML files use CSS query-string versioning for cache busting.
 - A debug footer build marker can be shown with ?debug=1.
+- The APK is now committed at docs/MyMediBuddy-Beta.apk and downloaded directly from the site.
 
 ## UX Notes Implemented
 - consistent typography and spacing improvements across pages,
 - improved card content fitting/wrapping,
+- mobile layout improvements for text, spacing, cards, and download button,
+- mobile navigation kept in a horizontal row,
 - back-to-top button appears on scroll and hides near top,
 - clearer installation guidance,
-- unified sticky/header behavior removed so full page scrolls together.
+- unified sticky/header behavior removed so full page scrolls together,
+- download confirmation message styling improved for visibility.
+
+## Tester Launch Status
+- The website is ready to send to the first tester.
+- Use docs/download.html as the main entry point for installation.
+- Use RELEASE_MESSAGE_PACK.md or WHATSAPP_MESSAGE_PACK.md when sending release messages.
 
 ## Copyright
 © 2026 Jens-Space — My Medi Buddy Project. All rights reserved.

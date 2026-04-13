@@ -27,13 +27,13 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
   min-height: 100vh;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 header {
@@ -93,14 +93,14 @@ main {
 }
 
 .hero h2 {
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   margin-bottom: 0.5rem;
   color: #000000;
   text-align: center;
 }
 
 .hero p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #000000;
 }
 

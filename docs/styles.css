@@ -336,11 +336,13 @@ ol li {
 .steps li strong {
   display: block;
   font-size: 0.95rem;
+  color: #000000;
 }
 
 .steps li p {
   font-size: 0.85rem;
   color: var(--text-light);
+  text-align: left;
 }
 
 .checklist {
@@ -377,12 +379,14 @@ ol li {
 .checklist strong {
   display: block;
   font-size: 0.95rem;
+  color: #000000;
 }
 
 .checklist p {
   font-size: 0.85rem;
   color: var(--text-light);
   margin: 0;
+  text-align: left;
 }
 
 ul {

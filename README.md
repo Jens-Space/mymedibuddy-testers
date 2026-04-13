@@ -61,6 +61,15 @@ This page exists to demonstrate that in-app reporting system.
 
 ---
 
+## 🌐 Live Website
+Use this exact URL:
+
+https://jens-space.github.io/mymedibuddy-testers/
+
+Note: `mymedibuddy-teasters` (with `ea`) is incorrect and returns a 404 page.
+
+---
+
 ## 🧠 Current Goal
 This project is a tester hub for the My Medi Buddy app.
 

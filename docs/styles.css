@@ -95,6 +95,7 @@ main {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
   color: #000000;
+  text-align: center;
 }
 
 .hero p {
@@ -115,6 +116,7 @@ main {
   font-size: 1.1rem;
   color: var(--primary-dark);
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .card p {
@@ -232,6 +234,7 @@ main {
 .friendly-content strong {
   display: block;
   font-size: 0.95rem;
+  text-align: center;
 }
 
 .friendly-content p {
@@ -269,6 +272,7 @@ main {
 .warm-point strong {
   display: block;
   font-size: 0.95rem;
+  text-align: center;
 }
 
 .warm-point p {

@@ -63,6 +63,8 @@ header {
   width: 100%;
   justify-content: space-around;
   box-shadow: var(--shadow);
+  border-top: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
 .nav a {

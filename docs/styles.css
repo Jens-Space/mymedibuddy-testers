@@ -216,6 +216,13 @@ main {
   font-size: 1rem;
 }
 
+.download-feedback {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
 .file-info {
   color: #ffffff;
   font-size: 0.8rem;

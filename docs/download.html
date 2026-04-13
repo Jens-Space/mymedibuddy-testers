@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776094459" />
+    <link rel="stylesheet" href="./styles.css?v=1776095358" />
   </head>
 
   <body>
@@ -45,9 +45,10 @@
           </div>
           <p class="updated-date">Last updated: <span id="date">...</span></p>
           
-          <a id="download-link" href="#" class="download-btn">
+          <a id="download-link" href="#" class="download-btn" target="_blank" rel="noopener noreferrer">
             <span>Download APK</span>
           </a>
+          <p id="download-feedback" class="download-feedback" style="display:none">✅ Download started — check your notifications bar!</p>
           
           <p class="file-info">📦 <span id="size">...</span> • 📱 Android 8.0+</p>
         </div>
@@ -58,7 +59,7 @@
         <ol class="steps">
           <li>
             <strong>Tap the Download APK button</strong>
-            <p>Your browser will start downloading the latest APK from GitHub Releases.</p>
+            <p>A new tab will open briefly, then close. Your download will appear in your <strong>notifications bar</strong> at the top of your screen — tap it to open the file.</p>
           </li>
           <li>
             <strong>Allow installation from unknown sources</strong>
@@ -78,6 +79,7 @@
       <section class="card">
         <h2>Having trouble?</h2>
         <ul>
+          <li><strong>Download not starting?</strong> A new tab will open then close — the download will appear in your notification bar. Give it a few seconds.</li>
           <li><strong>App won't install?</strong> Check that unknown sources is enabled and you have enough storage.</li>
           <li><strong>Getting "App not installed"?</strong> Try uninstalling any previous version first.</li>
           <li><strong>Need a hand?</strong> Use the in-app feedback form to ask questions.</li>
@@ -95,7 +97,13 @@
       // Fallback direct link to latest APK
       const releaseDownloadUrl = 'https://github.com/Jens-Space/mymedibuddy-testers/releases/latest/download/MyMediBuddy-Beta.apk';
       const link = document.getElementById('download-link');
+      const feedback = document.getElementById('download-feedback');
       link.href = releaseDownloadUrl;
+
+      link.addEventListener('click', function() {
+        feedback.style.display = 'block';
+        setTimeout(() => { feedback.style.display = 'none'; }, 8000);
+      });
 
       // GitHub API for version number, date, file size, and exact asset URL
       fetch('https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/latest')

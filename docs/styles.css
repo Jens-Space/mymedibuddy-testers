@@ -471,18 +471,18 @@ footer .muted {
   color: white;
   border: none;
   border-radius: 50%;
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 1;
   padding: 0;
   cursor: pointer;
   z-index: 999;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 #back-to-top.visible {
   display: flex;
+}
+
+#back-to-top svg {
+  display: block;
 }

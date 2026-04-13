@@ -60,8 +60,6 @@ header {
   gap: 0.5rem;
   padding: 0.75rem;
   background: white;
-  position: sticky;
-  top: 120px;
   width: 100%;
   justify-content: space-around;
   box-shadow: var(--shadow);

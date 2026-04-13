@@ -459,3 +459,26 @@ footer .muted {
   color: #7a7a7a;
   text-align: center;
 }
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  align-items: center;
+  justify-content: center;
+}
+
+#back-to-top.visible {
+  display: flex;
+}

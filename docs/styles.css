@@ -440,3 +440,10 @@ footer .muted {
   color: #999;
   margin-top: 0.25rem;
 }
+
+.debug-build {
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  color: #7a7a7a;
+  text-align: center;
+}

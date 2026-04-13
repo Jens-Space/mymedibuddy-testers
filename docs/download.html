@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776094294" />
+    <link rel="stylesheet" href="./styles.css?v=1776094459" />
   </head>
 
   <body>
@@ -45,7 +45,7 @@
           </div>
           <p class="updated-date">Last updated: <span id="date">...</span></p>
           
-          <a id="download-link" href="#" class="download-btn" target="_blank" rel="noopener noreferrer" download>
+          <a id="download-link" href="#" class="download-btn">
             <span>Download APK</span>
           </a>
           
@@ -58,7 +58,7 @@
         <ol class="steps">
           <li>
             <strong>Tap the Download APK button</strong>
-            <p>Google Drive will open. If prompted, select your Google account to continue. The APK file will start downloading to your phone.</p>
+            <p>Your browser will start downloading the latest APK from GitHub Releases.</p>
           </li>
           <li>
             <strong>Allow installation from unknown sources</strong>
@@ -92,16 +92,19 @@
     </footer>
 
     <script>
-      // GitHub Releases latest direct download link for the APK
+      // Fallback direct link to latest APK
       const releaseDownloadUrl = 'https://github.com/Jens-Space/mymedibuddy-testers/releases/latest/download/MyMediBuddy-Beta.apk';
       const link = document.getElementById('download-link');
       link.href = releaseDownloadUrl;
 
-      // GitHub API for version number, date and file size only
+      // GitHub API for version number, date, file size, and exact asset URL
       fetch('https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/latest')
         .then(res => res.json())
         .then(data => {
           const asset = data.assets[0];
+          if (asset && asset.browser_download_url) {
+            link.href = asset.browser_download_url;
+          }
           document.getElementById('version').textContent = data.tag_name.replace(/-beta$/i, '');
           document.getElementById('date').textContent = new Date(data.published_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
           document.getElementById('size').textContent = (asset.size / 1024 / 1024).toFixed(1) + ' MB';

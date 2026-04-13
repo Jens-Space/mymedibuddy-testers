@@ -211,6 +211,11 @@ main {
   color: #ffffff;
 }
 
+.download-box .updated-date #date,
+.download-box .file-info #size {
+  color: #ffffff;
+}
+
 .friendly-step {
   display: flex;
   align-items: flex-start;

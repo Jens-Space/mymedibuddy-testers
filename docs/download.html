@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776242127" />
+    <link rel="stylesheet" href="./styles.css?v=1776242218" />
   </head>
 
   <body>
@@ -102,14 +102,19 @@
         setTimeout(() => { feedback.style.display = 'none'; }, 6000);
       });
 
-      // GitHub API for version number and date only
+      // GitHub API for version number, date, size, and a cache-busting APK URL
       fetch('https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/latest')
         .then(res => res.json())
         .then(data => {
-          document.getElementById('version').textContent = data.tag_name.replace(/-beta$/i, '');
+          const tagName = data.tag_name || 'latest';
+          document.getElementById('version').textContent = tagName.replace(/-beta$/i, '');
           document.getElementById('date').textContent = new Date(data.published_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-          const asset = data.assets[0];
+          const asset = (data.assets || [])[0];
           if (asset) document.getElementById('size').textContent = (asset.size / 1024 / 1024).toFixed(1) + ' MB';
+          document.getElementById('download-link').href = './MyMediBuddy-Beta.apk?v=' + encodeURIComponent(tagName);
+        })
+        .catch(() => {
+          document.getElementById('download-link').href = './MyMediBuddy-Beta.apk?v=' + Date.now();
         });
     </script>
 

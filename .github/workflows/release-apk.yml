@@ -1,0 +1,44 @@
+name: Auto Release APK
+
+on:
+  push:
+    paths:
+      - 'docs/MyMediBuddy-Beta.apk'
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install aapt
+        run: sudo apt-get update && sudo apt-get install -y aapt
+
+      - name: Extract APK version
+        id: apk_version
+        run: |
+          VERSION_NAME=$(aapt dump badging docs/MyMediBuddy-Beta.apk | grep versionName | sed -nE \
+            "s/.*versionName='([^']+)'.*/\\1/p")
+          echo "APK_VERSION=$VERSION_NAME" >> $GITHUB_ENV
+          echo "version=$VERSION_NAME" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "v${{ env.APK_VERSION }}"
+          name: "MyMediBuddy v${{ env.APK_VERSION }}"
+          body: "Automated release for MyMediBuddy v${{ env.APK_VERSION }}."
+          files: docs/MyMediBuddy-Beta.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

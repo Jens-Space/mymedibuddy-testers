@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776446634" />
+    <link rel="stylesheet" href="./styles.css?v=1776448386" />
   </head>
 
   <body>
@@ -146,8 +146,9 @@
         .then(data => {
           const tagName = data.tag_name || 'latest';
           document.getElementById('version').textContent = tagName.replace(/-beta$/i, '');
-          document.getElementById('date').textContent = new Date(data.published_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
           const asset = (data.assets || [])[0];
+          const apkDate = asset ? asset.created_at : data.published_at;
+          document.getElementById('date').textContent = new Date(apkDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
           if (asset) document.getElementById('size').textContent = (asset.size / 1024 / 1024).toFixed(1) + ' MB';
           document.getElementById('download-link').href = './MyMediBuddy-Beta.apk?v=' + encodeURIComponent(tagName);
         })

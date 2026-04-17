@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776247478" />
+    <link rel="stylesheet" href="./styles.css?v=1776444975" />
   </head>
 
   <body>
@@ -46,7 +46,7 @@
           <p class="updated-date">Last updated: <span id="date">...</span></p>
           
           <a id="download-link" href="./MyMediBuddy-Beta.apk" class="download-btn" download>
-            <span>Download APK</span>
+            <span>Check for Update...</span>
           </a>
           <p id="download-feedback" class="download-feedback" style="display:none;color:#ffffff">✅ Download started — check your notifications bar!</p>
           
@@ -96,11 +96,48 @@
     <script>
       const link = document.getElementById('download-link');
       const feedback = document.getElementById('download-feedback');
+      const btnText = link.querySelector('span');
+      const appPackage = 'com.example.my_medi_buddy';
 
-      link.addEventListener('click', function() {
-        feedback.style.display = 'block';
-        setTimeout(() => { feedback.style.display = 'none'; }, 6000);
-      });
+      // Try to open existing app - if installed, shows "Open with" dialog; if not, iframe fails to load
+      const tryOpenApp = () => {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.onerror = () => {
+          // App not installed - show download button
+          btnText.textContent = 'Download APK';
+          link.setAttribute('download', 'MyMediBuddy-Beta.apk');
+          link.onclick = () => {
+            feedback.style.display = 'block';
+            setTimeout(() => { feedback.style.display = 'none'; }, 6000);
+          };
+        };
+        iframe.src = 'intent://' + appPackage + '#Intent;package=' + appPackage + ';end';
+        document.body.appendChild(iframe);
+
+        // If iframe loads successfully (app installed), show Update button
+        iframe.onload = () => {
+          btnText.textContent = 'Update App';
+          link.removeAttribute('download');
+        };
+
+        // Fallback timeout - assume installed if we can't tell
+        setTimeout(() => {
+          if (btnText.textContent === 'Check for Update...') {
+            btnText.textContent = 'Update App';
+            link.removeAttribute('download');
+          }
+          if (document.body.contains(iframe)) document.body.removeChild(iframe);
+        }, 2000);
+      };
+
+      // Only try on Android
+      if (/android/i.test(navigator.userAgent)) {
+        tryOpenApp();
+      } else {
+        btnText.textContent = 'Download APK';
+        link.setAttribute('download', 'MyMediBuddy-Beta.apk');
+      }
 
       // GitHub API for version number, date, size, and a cache-busting APK URL
       const releaseUrl = 'https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/latest?t=' + Date.now();

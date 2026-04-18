@@ -55,11 +55,6 @@ header {
 .logo {
   height: 120px;
   width: auto;
-  border-radius: 32px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  padding: 12px;
-  box-shadow: var(--shadow);
-  object-fit: contain;
 }
 
 .nav {
@@ -550,10 +545,6 @@ footer .muted {
 
    .logo {
      height: 92px;
-     border-radius: 24px;
-     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-     padding: 8px;
-     box-shadow: var(--shadow);
    }
 
   .nav {

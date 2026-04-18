@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./docs/styles.css?v=1776523651" />
+    <link rel="stylesheet" href="./docs/styles.css?v=1776523876" />
     <link rel="icon" type="image/png" href="./docs/icon/mmb-icon.png" sizes="1024x1024" />
     <link rel="apple-touch-icon" href="./docs/icon/mmb-icon.png" />
     <link rel="manifest" href="./docs/manifest.json" />
@@ -122,8 +122,7 @@
       <p class="muted">© 2026 Jens-Space | All rights reserved.</p>
     </footer>
 
-    <button id="back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
-    <button id="install-btn" style="display: none;">Install App</button>
+     <button id="back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
     <script>
       const btn = document.getElementById('back-to-top');
       window.addEventListener('scroll', () => {
@@ -136,27 +135,6 @@
           .then((reg) => console.log('Service Worker registered:', reg))
           .catch((err) => console.error('Service Worker registration failed:', err));
       }
-
-      let deferredPrompt;
-      const installBtn = document.getElementById('install-btn');
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        installBtn.style.display = 'block';
-      });
-      installBtn.addEventListener('click', async () => {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          const { outcome } = await deferredPrompt.userChoice;
-          if (outcome === 'accepted') {
-            installBtn.style.display = 'none';
-          }
-          deferredPrompt = null;
-        }
-      });
-      window.addEventListener('appinstalled', () => {
-        installBtn.style.display = 'none';
-      });
     </script>
   </body>
 </html>

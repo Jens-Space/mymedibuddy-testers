@@ -22,6 +22,13 @@ This log captures the latest website updates made during this session and the cu
 - Download button now uses native browser download behavior for better reliability.
 - Download feedback message styling improved for visibility.
 - Release message template files added at repository root.
+- **Converted website to a Progressive Web App (PWA)** — now installable on phones:
+  - Added service worker (`docs/sw.js`) for offline caching of all pages and the APK
+  - Linked web app manifest with proper metadata (display: standalone, theme colors, iOS support)
+  - Added iOS meta tags (`apple-mobile-web-app-capable`) for home screen installation
+  - Rounded PWA app icon corners for cleaner home screen appearance (180px radius)
+  - Service worker scope set to root to cover both `/` and `/docs/` pages
+  - Removed custom install button; relies on browser's native "Add to Home Screen" prompt
 
 ## Current APK Download URL
 https://jens-space.github.io/mymedibuddy-testers/docs/MyMediBuddy-Beta.apk

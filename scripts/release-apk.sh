@@ -6,13 +6,14 @@ set -e
 echo "Building APK..."
 flutter build apk --debug
 
-APK_PATH="build/app/outputs/flutter-apk/MyMediBuddy-Beta.apk"
+APK_PATH=$(ls -t build/app/outputs/flutter-apk/*.apk 2>/dev/null | head -1)
 
-if [ ! -f "$APK_PATH" ]; then
-    echo "Error: APK not found at $APK_PATH"
+if [ -z "$APK_PATH" ] || [ ! -f "$APK_PATH" ]; then
+    echo "Error: No APK found in build/app/outputs/flutter-apk/"
     exit 1
 fi
 
+echo "Using APK: $APK_PATH"
 echo "Uploading to GitHub release..."
 gh release upload v0.3.6 "$APK_PATH" --repo Jens-Space/mymedibuddy-testers --clobber
 

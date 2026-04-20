@@ -24,8 +24,21 @@ if [ -z "$APK_PATH" ] || [ ! -f "$APK_PATH" ]; then
     exit 1
 fi
 
+APK_NAME="MyMediBuddyBeta-$VERSION.apk"
+
 echo "Using APK: $APK_PATH"
-echo "Uploading to GitHub release $VERSION..."
-gh release upload "$VERSION" "$APK_PATH" --repo Jens-Space/mymedibuddy-testers --clobber
+echo "Copying to $APK_NAME..."
+cp "$APK_PATH" "build/app/outputs/flutter-apk/$APK_NAME"
+
+echo "Creating/Updating GitHub release $VERSION..."
+
+# Check if release exists, create if not
+if ! gh release view "$VERSION" --repo Jens-Space/mymedibuddy-testers &>/dev/null; then
+    echo "Creating new release $VERSION..."
+    gh release create "$VERSION" --title "MyMediBuddy $VERSION" --notes "Automated release for MyMediBuddy $VERSION" --repo Jens-Space/mymedibuddy-testers
+fi
+
+echo "Uploading APK..."
+gh release upload "$VERSION" "build/app/outputs/flutter-apk/$APK_NAME" --repo Jens-Space/mymedibuddy-testers --clobber
 
 echo "Done! APK uploaded to website as $VERSION."

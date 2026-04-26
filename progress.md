@@ -29,6 +29,8 @@ This log captures the latest website updates made during this session and the cu
   - Rounded PWA app icon corners for cleaner home screen appearance (180px radius)
   - Service worker scope set to root to cover both `/` and `/docs/` pages
   - Removed custom install button; relies on browser's native "Add to Home Screen" prompt
+- Updated navigation button labels from "Get" to "Download" across all pages
+- Updated "Get the app" step text to "Download the app from the download page" on home pages
 
 ## Current APK Download URL
 https://jens-space.github.io/mymedibuddy-testers/docs/MyMediBuddy-Beta.apk

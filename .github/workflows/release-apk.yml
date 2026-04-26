@@ -33,22 +33,30 @@ jobs:
         run: |
           VERSION_NAME=$(aapt dump badging docs/MyMediBuddy-Beta.apk | grep versionName | sed -nE \
             "s/.*versionName='([^']+)'.*/\\1/p")
-          echo "APK_VERSION=$VERSION_NAME" >> $GITHUB_ENV
+          if [ -z "$VERSION_NAME" ]; then
+            echo "Could not determine APK version from docs/MyMediBuddy-Beta.apk"
+            exit 1
+          fi
           echo "version=$VERSION_NAME" >> $GITHUB_OUTPUT
 
       - name: Delete existing release
         run: |
-          curl -s -X DELETE "https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/tags/v${{ env.APK_VERSION }}" \
+          RELEASE_ID=$(curl -s "https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/tags/v${{ steps.apk_version.outputs.version }}" \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" || true
+            -H "Accept: application/vnd.github+json" | jq -r '.id // empty')
+
+          if [ -n "$RELEASE_ID" ]; then
+            curl -s -X DELETE "https://api.github.com/repos/Jens-Space/mymedibuddy-testers/releases/$RELEASE_ID" \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github+json"
+          fi
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v${{ env.APK_VERSION }}"
-          name: "MyMediBuddy v${{ env.APK_VERSION }}"
-          body: "Automated release for MyMediBuddy v${{ env.APK_VERSION }}."
+          tag_name: "v${{ steps.apk_version.outputs.version }}"
+          name: "MyMediBuddy v${{ steps.apk_version.outputs.version }}"
+          body: "Automated release for MyMediBuddy v${{ steps.apk_version.outputs.version }}."
           files: docs/MyMediBuddy-Beta.apk
-          delete_empty: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,3 +1,2 @@
-docs/MyMediBuddy-Beta.apk filter=lfs diff=lfs merge=lfs -text
-*.apk filter=lfs diff=lfs merge=lfs -text
+# No LFS tracking — APKs stored directly in git
 *.apk !text !filter !merge !diff

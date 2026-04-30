@@ -3,7 +3,7 @@ name: Auto Release APK
 on:
   push:
     paths:
-      - 'docs/MyMediBuddy-Beta.apk'
+      - 'docs/MyMediBuddyBeta-v*.apk'
     branches:
       - main
 
@@ -28,16 +28,34 @@ jobs:
       - name: Install aapt
         run: sudo apt-get update && sudo apt-get install -y aapt
 
+      - name: Find APK file
+        id: find_apk
+        run: |
+          APK_FILE=$(find docs -maxdepth 1 -name "MyMediBuddyBeta-v*.apk" | head -1)
+          if [ -z "$APK_FILE" ]; then
+            echo "No APK file matching MyMediBuddyBeta-v*.apk found in docs/"
+            exit 1
+          fi
+          echo "apk_path=$APK_FILE" >> $GITHUB_OUTPUT
+
       - name: Extract APK version
         id: apk_version
         run: |
-          VERSION_NAME=$(aapt dump badging docs/MyMediBuddy-Beta.apk | grep versionName | sed -nE \
-            "s/.*versionName='([^']+)'.*/\\1/p")
+          APK_FILE="${{ steps.find_apk.outputs.apk_path }}"
+          # Extract version from filename: MyMediBuddyBeta-v0.3.8.apk -> 0.3.8
+          VERSION_NAME=$(basename "$APK_FILE" | sed -nE 's/MyMediBuddyBeta-v([0-9]+\.[0-9]+\.[0-9]+)\.apk/\1/p')
           if [ -z "$VERSION_NAME" ]; then
-            echo "Could not determine APK version from docs/MyMediBuddy-Beta.apk"
+            echo "Could not determine version from filename. Expected format: MyMediBuddyBeta-vX.Y.Z.apk"
             exit 1
           fi
           echo "version=$VERSION_NAME" >> $GITHUB_OUTPUT
+          echo "apk_file=$APK_FILE" >> $GITHUB_OUTPUT
+
+      - name: Update website APK reference
+        run: |
+          APK_FILE="${{ steps.apk_version.outputs.apk_file }}"
+          # Copy the versioned APK to the fixed name used by the website
+          cp "$APK_FILE" docs/MyMediBuddy-Beta.apk
 
       - name: Delete existing release
         run: |
@@ -57,6 +75,6 @@ jobs:
           tag_name: "v${{ steps.apk_version.outputs.version }}"
           name: "MyMediBuddy v${{ steps.apk_version.outputs.version }}"
           body: "Automated release for MyMediBuddy v${{ steps.apk_version.outputs.version }}."
-          files: docs/MyMediBuddy-Beta.apk
+          files: ${{ steps.find_apk.outputs.apk_path }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
